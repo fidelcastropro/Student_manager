@@ -1,0 +1,13 @@
+const express=require("express");
+const {createStudent}=require("../controllers/studentController");
+const {getAllStudent}=require("../controllers/studentController");
+const {getStudent}=require("../controllers/studentController");
+const {deleteStudent}=require("../controllers/studentController");
+const {updateStudent}=require("../controllers/studentController");
+const router=express.Router();
+router.post("/",createStudent);
+router.get("/allstudents", getAllStudent);
+router.get("/allstudents/:id",getStudent);
+router.delete("/delete/:id",deleteStudent);
+router.put("/update/:id", updateStudent);
+module.exports=router;
